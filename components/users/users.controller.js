@@ -8,22 +8,22 @@ class UsersCtrl {
     this.$scope = $scope;
     this.$timeout = $timeout;
 
-    // this.processParentNotification = this.processParentNotification.bind(this);
+    this.processParentNotification = this.processParentNotification.bind(this);
   }
 
   $onInit() {
-    // this.parentToChildNotificationRegistration({
-    //   handler: this.processParentNotification,
-    // });
-    this.getUsers();
+    this.parentToChildNotificationRegistration({
+      handler: this.processParentNotification,
+    });
+    // this.getUsers();
   }
 
-  // processParentNotification(eventHandler) {
-  //   console.log('notification received');
-  //   if (eventHandler === 'refreshUsers') {
-  //     this.getUsers();
-  //   }
-  // }
+  processParentNotification(eventHandler) {
+    console.log('notification received');
+    if (eventHandler === 'refreshUsers') {
+      this.getUsers();
+    }
+  }
 
   getUsers() {
     this.isLoading = true;

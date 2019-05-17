@@ -5,7 +5,7 @@ import './style.css';
 export default {
   template,
   controller,
-  // bindings: {
-  //   parentToChildNotificationRegistration: '&',
-  // },
+  bindings: {
+    parentToChildNotificationRegistration: '&',
+  },
 };
