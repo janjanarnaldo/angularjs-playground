@@ -1,6 +1,10 @@
-<p>
-  Users
-  <ul>
-    <li ng-repeat="user in $ctrl.users"><span>Id: {{ user.id}}</span> - <span>{{user.name}}</span></li>
-  </ul>
-</p>
+<div class="Users__root">
+  <button ng-click="$ctrl.getUsers()">Refresh Users</button>
+  <p>
+    Users
+    <p ng-if="$ctrl.isLoading">Loading...</p>
+    <ul>
+      <li ng-repeat="user in $ctrl.users"><span>Id: {{ user.id}}</span> - <span>{{user.name}}</span></li>
+    </ul>
+  </p>
+</div>
