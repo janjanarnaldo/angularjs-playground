@@ -11,9 +11,4 @@ homeModule.config(HomeConfig);
 import HomeCtrl from './home.controller';
 homeModule.controller('HomeCtrl', HomeCtrl);
 
-// Services
-import UserService from './user.service';
-
-homeModule.service('UserService', UserService);
-
 export default homeModule;

@@ -8,11 +8,14 @@ import './style.css';
 import './home'
 import './about'
 
+import components from './components';
+
 // Create and bootstrap application
 const requires = [
   'ui.router',
   'home',
-  'about'
+  'about',
+  components
 ];
 
 window.app = angular.module('app', requires);

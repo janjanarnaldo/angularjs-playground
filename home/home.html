@@ -6,8 +6,7 @@
   <button class="button" ng-click="$ctrl.getUsers()"> Find Users!</button>
 </p>
 <span ng-if="show">Here I Am</span>
-<p>
-  <ul>
-    <li ng-repeat="user in $ctrl.users"><span>Id: {{ user.id}}</span> - <span>{{user.name}}</span></li>
-  </ul>
-</p>
+
+<users
+  parent-to-child-notification-registration="$ctrl.childComponentNotificationRegistration(handler, 'userEventHandler')"
+></users>

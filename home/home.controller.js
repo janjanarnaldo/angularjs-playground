@@ -1,17 +1,28 @@
 class HomeCtrl {
 
-  constructor($scope, UserService, $location) {
+  constructor() {
     'ngInject';
 
     this.name = "AngularJS";
-    this.$Uservice = UserService;
-    this.users = [];
-    this.$scope = $scope;
+
+    this.childComponentNotificationRegistration = this.childComponentNotificationRegistration.bind(
+      this
+    );
   }
 
-  async getUsers() {
-    this.users = await this.$Uservice.getUsers().then(res => res.data);
-    this.$scope.$applyAsync();
+  $onInit() {
+    this.childComponentEventHandler = {
+      userEventHandler: null,
+    };
+  }
+
+  childComponentNotificationRegistration(handler, handlerType) {
+    this.childComponentEventHandler[handlerType] = handler;
+  }
+
+  getUsers() {
+    this.childComponentEventHandler.userEventHandler &&
+      this.childComponentEventHandler.userEventHandler('refreshUsers');
   }
 
 }

@@ -1,5 +1,4 @@
-
-class UserService {
+class UsersService {
   
   constructor($http) {
     'ngInject';
@@ -12,4 +11,4 @@ class UserService {
   
 }
 
-export default UserService;
+export default UsersService;
